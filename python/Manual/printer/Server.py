@@ -18,7 +18,7 @@ status = 0
 ice = None
 try:
     ic = Ice.initialize(sys.argv)
-    adapter = ic.createObjectAdapterWithEndpoints("SimplePrinterAdapter", "default -h localhost -p 10000")
+    adapter = ic.createObjectAdapterWithEndpoints("SimplePrinterAdapter", "default -h 127.0.0.1 -p 10000")
     object = PrinterI()
     adapter.add(object, ic.stringToIdentity("SimplePrinter"))
     adapter.activate()
